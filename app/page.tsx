@@ -34,11 +34,15 @@ export default function HomePage() {
 
       {/* 1.5 THE COMMUNITY & SYNERGY MANIFESTO */}
       <section className="relative w-full rounded-2xl overflow-hidden border border-gray-800 bg-gray-900 min-h-[450px] flex items-center group">
-        {/* The Background Image Placeholder */}
+        
+        {/* UPDATED: Background Image */}
         <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
-           <div className="absolute inset-0 flex items-center justify-end pr-10 text-gray-700 text-lg font-bold uppercase tracking-widest text-right">
-             [Ghanaian Debate<br/>Community Photo]
-           </div>
+          <Image 
+            src="/community.jpg" 
+            alt="Ghanaian Debate Community" 
+            fill 
+            className="object-cover object-right opacity-60"
+          />
         </div>
         
         {/* The Cinematic Gradient Overlay */}
