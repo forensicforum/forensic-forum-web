@@ -20,10 +20,15 @@ export default function HomePage() {
           </Link>
         </div>
         
+        {/* UPDATED: Actual Image Component */}
         <div className="bg-gray-900 border border-gray-800 rounded-lg aspect-video relative overflow-hidden group">
-          <div className="absolute inset-0 bg-[#12161A] flex items-center justify-center text-gray-700 font-bold tracking-widest uppercase">
-            [Hero Image]
-          </div>
+          <Image 
+            src="/hero.jpg" 
+            alt="Forensic Forum Hero" 
+            fill 
+            priority 
+            className="object-cover"
+          />
         </div>
       </section>
 
