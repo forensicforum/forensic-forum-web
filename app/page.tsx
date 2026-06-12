@@ -20,12 +20,12 @@ export default function HomePage() {
           </Link>
         </div>
         
-        {/* UPDATED: Actual Image Component */}
         <div className="bg-gray-900 border border-gray-800 rounded-lg aspect-video relative overflow-hidden group">
           <Image 
             src="/hero.jpg" 
             alt="Forensic Forum Hero" 
             fill 
+            sizes="(max-width: 768px) 100vw, 50vw"
             priority 
             className="object-cover"
           />
@@ -35,20 +35,18 @@ export default function HomePage() {
       {/* 1.5 THE COMMUNITY & SYNERGY MANIFESTO */}
       <section className="relative w-full rounded-2xl overflow-hidden border border-gray-800 bg-gray-900 min-h-[450px] flex items-center group">
         
-        {/* UPDATED: Background Image */}
         <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
           <Image 
             src="/community.jpg" 
             alt="Ghanaian Debate Community" 
             fill 
-            className="object-cover object-right opacity-60"
+            sizes="100vw"
+            className="object-cover object-center opacity-90"
           />
         </div>
         
-        {/* The Cinematic Gradient Overlay */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#12161A] via-[#12161A]/90 to-transparent"></div>
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#12161A]/90 via-[#12161A]/50 to-transparent/20"></div>
 
-        {/* The Dynamic Text Content */}
         <div className="relative z-20 p-10 md:p-16 w-full md:w-2/3 space-y-6">
           <div className="inline-flex items-center gap-3">
             <span className="h-[2px] w-8 bg-[#2FB7B2]"></span>
@@ -82,18 +80,55 @@ export default function HomePage() {
         </div>
         
         <div className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory hide-scrollbar">
-          {[1, 2, 3, 4].map((item) => (
-            <div key={item} className="bg-gray-900 border border-gray-800 rounded-lg shrink-0 w-80 snap-center overflow-hidden group cursor-pointer">
-              <div className="aspect-video bg-[#0a0a0a] relative">
-                 <div className="absolute inset-0 flex items-center justify-center text-gray-700 text-sm font-bold">[Event Photo {item}]</div>
-              </div>
-              <div className="p-5">
-                <p className="text-[#2FB7B2] text-xs font-bold mb-1 uppercase">Debate Prep</p>
-                <h4 className="text-lg font-bold mb-2">National Universities Championship {item}</h4>
-                <p className="text-gray-400 text-sm line-clamp-2">Register your institution for the premier forensic speaking tournament of the season.</p>
-              </div>
+          
+          {/* EVENT CARD 1: GNDC */}
+          <div className="bg-gray-900 border border-gray-800 rounded-lg shrink-0 w-80 snap-center overflow-hidden group cursor-pointer">
+            <div className="aspect-video bg-[#0a0a0a] relative">
+               <Image src="/GNDC26.png" alt="GNDC 2026" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-top" />
             </div>
-          ))}
+            <div className="p-5">
+              <p className="text-[#2FB7B2] text-xs font-bold mb-1 uppercase">Debate Comp</p>
+              <h4 className="text-lg font-bold mb-2">GNDC 2026</h4>
+              <p className="text-gray-400 text-sm line-clamp-2">The premier tournament designed to transition novices into competitive circuit debating.</p>
+            </div>
+          </div>
+
+          {/* EVENT CARD 2: Accra Open */}
+          <div className="bg-gray-900 border border-gray-800 rounded-lg shrink-0 w-80 snap-center overflow-hidden group cursor-pointer">
+            <div className="aspect-video bg-[#0a0a0a] relative">
+               <Image src="/AOXII.jpeg" alt="Accra Open XII" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+            </div>
+            <div className="p-5">
+              <p className="text-[#2FB7B2] text-xs font-bold mb-1 uppercase">Debate Comp</p>
+              <h4 className="text-lg font-bold mb-2">Accra Open XII</h4>
+              <p className="text-gray-400 text-sm line-clamp-2">Join one of West Africa&apos;s most prestigious open debating championships.</p>
+            </div>
+          </div>
+
+          {/* EVENT CARD 3: GUDC */}
+          <div className="bg-gray-900 border border-gray-800 rounded-lg shrink-0 w-80 snap-center overflow-hidden group cursor-pointer">
+            <div className="aspect-video bg-[#0a0a0a] relative">
+               <Image src="/GUDC26.jpg" alt="Ghana Universities Debate Championship" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+            </div>
+            <div className="p-5">
+              <p className="text-[#2FB7B2] text-xs font-bold mb-1 uppercase">Debate Comp</p>
+              <h4 className="text-lg font-bold mb-2">Ghana Universities Debate Championship</h4>
+              <p className="text-gray-400 text-sm line-clamp-2">The ultimate national battleground for university debating societies across Ghana.</p>
+            </div>
+          </div>
+
+          {/* EVENT CARD 4: PAUDC */}
+          <div className="bg-gray-900 border border-gray-800 rounded-lg shrink-0 w-80 snap-center overflow-hidden group cursor-pointer">
+            <div className="aspect-video bg-[#0a0a0a] relative">
+               <Image src="/PAUDC26.jpg" alt="Pan-African Universities Debate Championship" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+            </div>
+            <div className="p-5">
+              <p className="text-[#2FB7B2] text-xs font-bold mb-1 uppercase">Debate Comp</p>
+              <h4 className="text-lg font-bold mb-2">Pan-African Universities Debate Championship 2026, Abuja</h4>
+              <p className="text-gray-400 text-sm line-clamp-2">The flagship continental debating tournament bringing together institutional minds across Africa to Abuja.</p>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -105,31 +140,73 @@ export default function HomePage() {
         </div>
         
         <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory hide-scrollbar">
-          {[1, 2, 3, 4, 5].map((item) => (
-            <div key={item} className="bg-[#0a0a0a] rounded-lg shrink-0 w-72 aspect-square snap-center relative overflow-hidden border border-gray-800">
-               <div className="absolute inset-0 flex items-center justify-center text-gray-700 font-bold uppercase text-center p-4">
-                 [Operational<br/>Photo {item}]
-               </div>
-            </div>
-          ))}
+          <div className="bg-[#0a0a0a] rounded-lg shrink-0 w-72 aspect-square snap-center relative overflow-hidden border border-gray-800">
+             <Image src="/team1.jpeg" alt="Operations Asset 1" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover" />
+          </div>
+          <div className="bg-[#0a0a0a] rounded-lg shrink-0 w-72 aspect-square snap-center relative overflow-hidden border border-gray-800">
+             <Image src="/team2.jpeg" alt="Operations Asset 2" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover" />
+          </div>
+          <div className="bg-[#0a0a0a] rounded-lg shrink-0 w-72 aspect-square snap-center relative overflow-hidden border border-gray-800">
+             <Image src="/team3.jpg" alt="Operations Asset 3" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover" />
+          </div>
+          <div className="bg-[#0a0a0a] rounded-lg shrink-0 w-72 aspect-square snap-center relative overflow-hidden border border-gray-800">
+             <Image src="/team4.jpg" alt="Operations Asset 4" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover object-right" />
+          </div>
+          <div className="bg-[#0a0a0a] rounded-lg shrink-0 w-72 aspect-square snap-center relative overflow-hidden border border-gray-800">
+             <Image src="/team5.jpeg" alt="Operations Asset 5" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover" />
+          </div>
         </div>
       </section>
 
-      {/* 4. CIRCUIT NEWS & BUZZ */}
+      {/* 4. CIRCUIT NEWS & BUZZ (WITH YOUR TITLES) */}
       <section className="border-t border-gray-800 pt-12">
         <h2 className="text-2xl font-bold uppercase text-[#2FB7B2] tracking-wide text-sm mb-2">Buzz & Whispers</h2>
         <h3 className="text-3xl font-bold mb-8">Latest from the Circuit</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((item) => (
-            <div key={item} className="group cursor-pointer">
-              <div className="bg-gray-900 border border-gray-800 aspect-video rounded-lg mb-4 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-700 text-sm font-bold">[News Image]</div>
-              </div>
-              <p className="text-xs text-gray-500 mb-2">June 10, 2026 • Community</p>
-              <h4 className="text-lg font-bold group-hover:text-[#2FB7B2] transition line-clamp-2">The Changing Landscape of the British Parliamentary Format</h4>
+          
+          {/* POST 1: Opana */}
+          <div className="group cursor-pointer">
+            <div className="bg-gray-900 border border-gray-800 aspect-video rounded-lg mb-4 relative overflow-hidden">
+              <Image src="/buzz-neaux.jpg" alt="Neaux Neaux Neaux Finals" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
             </div>
-          ))}
+            <p className="text-xs text-gray-500 mb-2">June 12, 2026 • Humor &amp; Glory</p>
+            <h4 className="text-lg font-bold group-hover:text-[#2FB7B2] transition line-clamp-2">
+              &quot;Neaux Neaux Neaux&quot;: The Worlds DCA humors his way to a KDO sweep victory.
+            </h4>
+            <p className="text-gray-400 text-sm mt-2 line-clamp-2">
+              Opana, known for his sharp witty speeches, drops a legendary &quot;no no no&quot; line in his finals-winning speech, instantly creating a circuit meme.
+            </p>
+          </div>
+
+          {/* POST 2: Gold Coast */}
+          <div className="group cursor-pointer">
+            <div className="bg-gray-900 border border-gray-800 aspect-video rounded-lg mb-4 relative overflow-hidden">
+              <Image src="/buzz-gci.jpeg" alt="Gold Coast Invitational" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-top" />
+            </div>
+            <p className="text-xs text-gray-500 mb-2">June 11, 2026 • Tournament Tracker</p>
+            <h4 className="text-lg font-bold group-hover:text-[#2FB7B2] transition line-clamp-2">
+              Gold Coast Invitational: New Tournament New Wahala
+            </h4>
+            <p className="text-gray-400 text-sm mt-2 line-clamp-2">
+              Fresh institutional boundaries bring high-stakes drama and unprecedented motions to the newly introduced circuit fixture.
+            </p>
+          </div>
+
+          {/* POST 3: Prosper */}
+          <div className="group cursor-pointer">
+            <div className="bg-gray-900 border border-gray-800 aspect-video rounded-lg mb-4 relative overflow-hidden">
+              <Image src="/buzz-prosper.jpg" alt="Prosper Ametu Farewell" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-top" />
+            </div>
+            <p className="text-xs text-gray-500 mb-2">June 08, 2026 • Legends Departure</p>
+            <h4 className="text-lg font-bold group-hover:text-[#2FB7B2] transition line-clamp-2">
+              Prosper &quot;The Landlord&quot; Ametu drops 2 hot early releases for the community as he takes a long-awaited farewell
+            </h4>
+            <p className="text-gray-400 text-sm mt-2 line-clamp-2">
+              Winning the first two tournaments of the debate year, The Landlord dominates the circuit calendar one last time before departing to China.
+            </p>
+          </div>
+
         </div>
       </section>
 
@@ -157,7 +234,6 @@ export default function HomePage() {
 
       {/* 6. CONTACT & NEWSLETTER ENGINE */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-gray-800 pt-12">
-        {/* Newsletter Capture */}
         <div className="bg-gray-900 p-8 rounded-lg border border-gray-800 h-fit">
           <h3 className="text-2xl font-bold mb-3">Subscribe to our Newsletter</h3>
           <p className="text-sm text-gray-400 mb-6">Get the latest circuit news, tournament invites, and ThoughtCafe articles delivered directly to your inbox.</p>
@@ -173,7 +249,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Inline Contact Form */}
         <div className="bg-gray-900 p-8 rounded-lg border border-gray-800">
           <h3 className="text-2xl font-bold mb-2">Connect with Operations</h3>
           <p className="text-sm text-gray-400 mb-6">Send us a direct message for partnership inquiries, booking, or general questions.</p>
